@@ -1,0 +1,28 @@
+:host {
+    background: #fff;
+    height: 48px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+
+    &.hidden {
+        display: none;
+    }
+}
+
+.btn {
+    background-color: #5047c0;
+    transition: 0.3s all;
+    border-radius: 0;
+
+    &:hover {
+        background-color: #c0479b;
+    }
+}
+
+.title {
+    flex: 1;
+}

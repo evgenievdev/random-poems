@@ -1,0 +1,6 @@
+<div class="title">{{poem.title}}</div>
+<div class="author">{{poem.author}}</div>
+<div class="line fade-in-left" [ngStyle]="{ 'animation-delay': i*0.2+'s' }"
+    *ngFor="let line of poem.lines; let i = index" [class.verse-break]="line.length === 0">
+    {{line}}
+</div>

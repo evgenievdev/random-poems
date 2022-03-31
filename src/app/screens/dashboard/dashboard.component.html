@@ -1,0 +1,18 @@
+<div class="container">
+    <app-menu *ngIf="(loading$ | async) === false"></app-menu>
+ 
+    <div class="content-wrapper" *ngIf="poems$ | async as poems">
+
+        <div class="items-list">
+            <ng-container *ngIf="poems.length > 0">
+                <app-item *ngFor="let poem of poems; let i = index" [class.selected]="i === (selectedPoemId$ | async)" (click)="selectPoem(poem)" [poem]="poem"></app-item>
+            </ng-container>
+        </div>
+        <div class="preview" [class.collapsed]="(selectedPoem$ | async) === undefined">
+            <app-preview *ngIf="selectedPoem$ | async as poem" [poem]="poem"></app-preview>
+        </div>
+
+    </div>
+
+    <app-loading *ngIf="loading$ | async" [label]="loadingStep$ | async"></app-loading>
+</div>

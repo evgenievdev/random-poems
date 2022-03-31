@@ -1,0 +1,13 @@
+<div class="card-container">
+    <div class="card">
+        <div class="left" [ngStyle]="{ background: randomColor()}">
+            <h2>{{poem.author}}</h2>
+            <a class="more" (click)="$event.stopPropagation();moreFromAuthor(poem.author)">More from this author <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="right">
+            <h2>{{poem.title}}</h2>
+            <h6>{{poem.lines[0]}}</h6>
+            <button class="btn">Read &gt;</button>
+        </div>
+    </div>
+</div>
